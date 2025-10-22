@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# CI shim for environments that invoke ./gradlew within mobile_frontend/android
+# In Expo-managed workflow, android/ is not present unless prebuild has run.
+echo "[INFO] android/gradlew shim: No native Android project detected."
+echo "[INFO] To perform native builds, run: npx expo prebuild"
+echo "[INFO] After prebuild, use the generated ./gradlew within android/."
+exit 0

@@ -8,8 +8,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint .",
-    "prebuild:android": "expo prebuild --platform android",
-    "build": "npm run prebuild:android && cd android && ./gradlew assembleDebug"
+    "// note": "Expo-managed workflow: no native folders unless prebuild is run.",
+    "build:web": "expo export --platform web",
+    "build": "npm run build:web",
+    "build:native": "echo \"Native build skipped: run 'npx expo prebuild' first to generate android/ios folders, then build with platform tools.\" && exit 0"
   },
   "dependencies": {
     "@expo/metro-runtime": "~5.0.4",

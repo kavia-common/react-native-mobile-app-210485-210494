@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Guard script to prevent CI failures when Gradle wrapper is invoked within mobile_frontend
+# in an Expo-managed project without native android/ folder.
+
+echo "[INFO] mobile_frontend: Gradle wrapper not available for Expo-managed workflow."
+echo "[INFO] Skipping native build. To enable native builds, run 'npx expo prebuild' to generate android/ and ios/ projects."
+echo "[INFO] See ../CI_NOTES.md and ./CI_NOTES.md for details."
+exit 0

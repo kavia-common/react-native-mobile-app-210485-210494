@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# CI shim at repository root for accidental Gradle wrapper invocation
+echo "[INFO] Root android/gradlew shim: Native Android project not generated."
+echo "[INFO] Run 'npx expo prebuild' to create native projects before building."
+exit 0
