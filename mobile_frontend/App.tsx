@@ -1,21 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { enableScreens } from 'react-native-screens';
+import RootNavigation from './src/navigation/TabNavigator';
 
-export default function App() {
+export default function App(): JSX.Element {
+  // enable native screens for performance
+  useEffect(() => {
+    enableScreens(true);
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <>
+      <RootNavigation />
       <StatusBar style="auto" />
-    </View>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
